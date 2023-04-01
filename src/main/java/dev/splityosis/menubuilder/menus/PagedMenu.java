@@ -31,6 +31,14 @@ public class PagedMenu extends Menu{
         return listedItems;
     }
 
+    public void setListedItems(List<MenuItem> listedItems) {
+        this.listedItems = listedItems;
+    }
+
+    public void replaceListedItem(MenuItem from, MenuItem to){
+        listedItems.set(listedItems.indexOf(from),to);
+    }
+
     public void setStaticItem(int slot, MenuItem menuItem){
         staticItems.put(slot, menuItem);
         setItem(slot, menuItem);
