@@ -1,0 +1,5 @@
+name: MenuBuilder
+version: '${project.version}'
+main: dev.splityosis.menubuilder.MenuBuilder
+api-version: 1.19
+authors: [ SplitYoSis ]
