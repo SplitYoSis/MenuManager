@@ -20,8 +20,9 @@ public class MenuManager implements Listener {
     public void onClick(InventoryClickEvent e){
         if (e.getClickedInventory() == null) return;
         if (e.getClickedInventory().getHolder() == null) return;
-        if (!(e.getClickedInventory().getHolder() instanceof AbstractMenu)) return;
+        if (!(e.getInventory().getHolder() instanceof AbstractMenu)) return;
         e.setCancelled(true);
+        if (!(e.getClickedInventory().getHolder() instanceof AbstractMenu)) return;
         AbstractMenu menu = (AbstractMenu) e.getClickedInventory().getHolder();
         ItemStack clicked = e.getCurrentItem();
         if (clicked == null) return;
