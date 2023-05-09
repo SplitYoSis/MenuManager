@@ -50,7 +50,8 @@ public class PagedMenu extends Menu{
     }
 
     public int getPagesAmount(){
-        return listedItems.size()/getPageSize() + 1;
+        int div = listedItems.size()/getPageSize();
+        return div == 0 ? 1 : div;
     }
 
     public int getPageSize(){
@@ -59,6 +60,10 @@ public class PagedMenu extends Menu{
 
     public boolean hasPage(int page){
         return page <= getPagesAmount() && page > 0;
+    }
+
+    public void refreshPage(){
+        setPage(currentPage);
     }
 
     public void setPage(int page){
